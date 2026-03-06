@@ -1,20 +1,68 @@
 package mil.army.moda.vehicle.vehicle;
 
-
+// Imported packages
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+// Here is the head of the "table"
 @Entity
 public class Vehicle {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id; // This is the creation of your primary key
 
+    // These are the other "columns" after the primary key
     private String make;
     private String model;
     private int year;
     private int mileage;
 
+    public Vehicle(String make, String model, int year, int mileage) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.mileage = mileage;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(int mileage) {
+        this.mileage = mileage;
+    }
 }
